@@ -219,6 +219,7 @@
     flex-wrap: wrap;
     z-index: 7;
     transform: translateY(var(--image-list-offset));
+    transition: transform 0.6s ease-out;
 }
 
 .pokemon-div {
@@ -229,20 +230,25 @@
 
 .pokemon {
     width: 110px;
-    line-height: 27px;
-    padding: 10px 20px 10px 5px;
+    line-height: 28px;
+    padding: 11px 20px 10px 5px;
     font-size: 12px;
     background-color:rgb(247, 240, 205);
-    border-bottom: 1px solid rgb(247, 240, 205);
+    border-bottom: 1px solid black;
     border-left: 1px solid black;
+    border-radius: 15px;
     transform: translateX(20px);
 }
 
 .selected-name {
+    color: white;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     scale: 1.1;
-    background-color:rgb(252, 134, 113);
+    background-color:rgb(204, 39, 10);
+    border: 1px solid black;
+    border-radius: 15px;
+    z-index: 8;
 }
 
 .pokemon-image {

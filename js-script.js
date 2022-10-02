@@ -1,5 +1,6 @@
 // Global variables for each element
 const screen = document.querySelector('.boundingbox');
+const zoomButton = document.querySelector('.button4');
 const listDiv = document.querySelector('.list-div');
 const dpadUp = document.querySelector('.up');
 const dpadDown = document.querySelector('.down');
@@ -22,6 +23,9 @@ const GlobalCountObject = new function() {
         return count;
     };
 }
+
+// Initialise the zoom to zero.
+let zoom = false;
 
 // Initialise the slider at 1;
 slider.value = 1;
@@ -122,11 +126,20 @@ function manualScroll(event) {
 }
 
 function zoomScreen() {
-    screen.style.zoom = 2;
-    window.scrollTo(400, 650);
+    if (zoom == false) {
+        screen.style.zoom = 2;
+        window.scrollTo(400, 600);
+        zoom = true;
+    }
+    else {
+        screen.style.zoom = 1;
+        window.scrollTo(0, 0);
+        zoom = false;
+    }
+    
 }
 
-//screen.addEventListener('mousedown', zoomScreen);
+zoomButton.addEventListener('mousedown', zoomScreen);
 dpadDown.addEventListener('mousedown', scrollListDown);
 dpadUp.addEventListener('mousedown', scrollListUp);
 slider.addEventListener('mousemove', manualScroll);
