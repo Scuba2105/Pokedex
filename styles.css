@@ -1,0 +1,537 @@
+:root {
+    --offset: 55px;
+    --image-list-offset: 3750px;
+}
+
+.base {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    height: 560px;
+    width: 400px;
+    background-color: red;
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -3;
+}
+
+.base-top {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    height: 200px;
+    width: 400px;
+    background-color: red;
+    border: 1px solid black;
+    z-index: -1;
+    clip-path: polygon(0% 50%, 36% 50%, 66% 12%, 100% 12%, 100% 0%, 0% 0%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 5px;
+}
+
+.base-top-border {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    height: 200px;
+    width: 400px;
+    background-color: black;
+    z-index: -2;
+    clip-path: polygon(0% 51%, 36% 51%, 66% 12.5%, 100% 12.5%, 100% 0%, 0% 0%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 5px;
+}
+
+.hinge {
+    position: absolute;
+    top: 150px;
+    left: 550px;
+    height: 560px;
+    width: 50px;
+    background-color: red;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -3;
+}
+
+.hinge1 {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.hinge2 {
+    position: absolute;
+    top: 505px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.white-circle {
+    position: absolute;
+    top: 155px;
+    left: 212px;
+    height: 85px;
+    width: 85px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 0;
+}
+
+.blue-circle {
+    position: absolute;
+    top: 168px;
+    left: 225px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(79, 164, 233);
+    z-index: 0;
+}
+
+.indicator-lights {
+    position: absolute;
+    top: 158px;
+    left: 300px;
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+    height: 30px;
+    z-index: 2;
+}
+
+.red-light {
+    background-color: rgb(221, 69, 90);
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.yellow-light {
+    background-color: rgb(214, 212, 70);
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.green-light {
+    background-color: rgb(72, 199, 100);
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.screen-outline {
+    position: absolute;
+    top: 285px;
+    left: 220px;
+    height: 255px;
+    width: 305px;
+    background-color: rgb(233, 219, 219);
+    border: 1px solid black;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 17% 100%, 0 80%);
+    z-index: 1;
+}
+
+.screen-outline-border {
+    position: absolute;
+    top: 285px;
+    left: 220px;
+    height: 255px;
+    width: 305px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 16.5% 100%, 0 80.5%);
+    z-index: 1;
+}
+
+.screen {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 45px 1fr;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 165px;
+    width: 225px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.scroll {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    -webkit-appearance: none;
+    z-index: 5;
+    width: 120px;
+    transform: translate(-50px);
+}
+
+.scroll::-webkit-slider-runnable-track {
+    background: #33373a;
+    height: 10px;
+    transform: rotate(90deg);
+}
+
+  .scroll::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -7px; /* Centers thumb on the track */
+    background-color: #5cd5eb;
+    height: 24px;
+    width: 12px;  
+    border-radius: 5px;  
+  }
+
+.list-div {
+    grid-column: 2 / span 2; 
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    z-index: 7;
+    transform: translateY(var(--image-list-offset));
+}
+
+.pokemon-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pokemon {
+    width: 110px;
+    line-height: 27px;
+    padding: 10px 20px 10px 5px;
+    font-size: 12px;
+    background-color:rgb(247, 240, 205);
+    border-bottom: 1px solid rgb(247, 240, 205);
+    border-left: 1px solid black;
+    transform: translateX(20px);
+}
+
+.selected-name {
+    font-weight: bold;
+    font-size: 10px;
+    scale: 1.1;
+    background-color:rgb(252, 134, 113);
+}
+
+.pokemon-image {
+    height: 50px;
+    width: 50px;
+    justify-self: center;
+    align-self:flex-start;
+}
+
+.lights {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 20px;
+    z-index: 2;
+}
+
+.left-light,
+.right-light {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    background-color: rgb(221, 69, 90);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.button1 {
+    position: absolute;
+    top: 553px;
+    left: 223px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(44, 43, 43);
+    z-index: -1;
+}
+
+.button2 {
+    position: absolute;
+    top: 570px;
+    left: 283px;
+    height: 10px;
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(218, 136, 29);
+    z-index: -1;
+}
+
+.button3 {
+    position: absolute;
+    top: 570px;
+    left: 360px;
+    height: 10px;
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(63, 78, 216);
+    z-index: -1;
+}
+
+.button4 {
+    position: absolute;
+    top: 615px;
+    left: 275px;
+    height: 60px;
+    width: 125px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(16, 189, 123);
+    z-index: -1;
+}
+
+.d-pad {
+    position: absolute;
+    top: 545px;
+    left: 435px;
+    height: 90px;
+    width: 90px;
+    z-index: -1;
+}
+
+.vertical-d-pad {
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 100%;
+    background-color: rgb(44, 43, 43);
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.up {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.down {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.horizontal-d-pad {
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 100%;
+    background-color: rgb(44, 43, 43);
+    border-radius: 5px;
+    transform: rotate(90deg);
+    z-index: -1;
+}
+
+.left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.d-pad-inner-circle {
+    position: absolute;
+    top: calc(50% - 8.5px);
+    left: calc(50% - 8.5px);
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.top-cover {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    height: 560px;
+    width: 365px;
+    transform: translateX(400px);
+    background-color: red;
+    border: 1px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 35px;
+    clip-path: polygon(0% 4.5%, 28% 4.5%, 61% 19%, 100% 19%, 100% 100%, 0% 100%);
+    z-index: -3;
+}
+
+.top-cover-border {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    height: 560px;
+    width: 365px;
+    transform: translateX(400px);
+    background-color: black;
+    border: 1px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 35px;
+    clip-path: polygon(0% 4.25%, 28% 4.25%, 61% 18.75%, 100% 18.75%, 100% 100%, 0% 100%);
+    z-index: -4;
+}
+
+.second-screen {
+    position: absolute;
+    top: 335px;
+    left: 650px;
+    height: 95px;
+    width: 255px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: -2;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1px;
+    position: absolute;
+    top: 445px;
+    left: 650px;
+    height: 75px;
+    width: 255px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    z-index: -2;
+}
+
+.button {
+    background-color: aqua;
+}
+
+.two-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+    position: absolute;
+    top: 555px;
+    left: 650px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    z-index: -2;
+}
+
+.white-button {
+    background-color: antiquewhite;
+}
+
+.button5 {
+    position: absolute;
+    top: 532px;
+    left: 815px;
+    height: 10px;
+    width: 40px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    border-radius: 10px;;
+    z-index: -2;       
+}
+
+.button6 {
+    position: absolute;
+    top: 532px;
+    left: 865px;
+    height: 10px;
+    width: 40px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    border-radius: 10px;;
+    z-index: -2;       
+}
+
+.button7 {
+    position: absolute;
+    top: 565px;
+    left: 876px;
+    height: 32px;
+    width: 32px;
+    background-color: rgb(216, 139, 24);
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: -2;       
+}
+
+.button8 {
+    position: absolute;
+    top: 628px;
+    left: 650px;
+    height: 40px;
+    width: 120px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    border-radius: 10px;;
+    z-index: -2;       
+}
+
+.button9 {
+    position: absolute;
+    top: 628px;
+    left: 790px;
+    height: 40px;
+    width: 120px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    border-radius: 10px;;
+    z-index: -2;      
+}
