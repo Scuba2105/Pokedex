@@ -177,7 +177,7 @@
     left: 40px;
     height: 165px;
     width: 225px;
-    background-color: white;
+    background-image: url("images/grass.jpeg");
     border: 1px solid black;
     border-radius: 10px;
     z-index: 2;
@@ -185,18 +185,19 @@
 }
 
 .scroll {
-    grid-column: 1;
-    grid-row: 1 / span 2;
+    position: absolute;
+    top: 75px;
+    left: -45px;
     -webkit-appearance: none;
     z-index: 5;
     width: 120px;
-    transform: translate(-50px);
+    transform: translateY(-50px);
+    transform: rotate(90deg);
 }
 
 .scroll::-webkit-slider-runnable-track {
     background: #33373a;
     height: 10px;
-    transform: rotate(90deg);
 }
 
   .scroll::-webkit-slider-thumb {
@@ -232,7 +233,7 @@
     width: 110px;
     line-height: 28px;
     padding: 11px 20px 10px 5px;
-    font-size: 12px;
+    font-size: 10px;
     background-color:rgb(247, 240, 205);
     border-bottom: 1px solid black;
     border-left: 1px solid black;
@@ -243,7 +244,7 @@
 .selected-name {
     color: white;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
     scale: 1.1;
     background-color:rgb(204, 39, 10);
     border: 1px solid black;
@@ -256,6 +257,8 @@
     width: 50px;
     justify-self: center;
     align-self:flex-start;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .lights {

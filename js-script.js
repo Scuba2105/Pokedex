@@ -5,6 +5,7 @@ const listDiv = document.querySelector('.list-div');
 const dpadUp = document.querySelector('.up');
 const dpadDown = document.querySelector('.down');
 const slider = document.querySelector('.scroll');
+const display = document.querySelector('.screen');
 
 // Tracks the count in the list of pokemon
 const GlobalCountObject = new function() {
@@ -40,6 +41,7 @@ fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
 .then(response => response.json())
 .then(data => {
     pokedex.push(...data.pokemon)
+    console.log(pokedex);
     populateData();
     console.log(listDiv.children);
     const previousName = listDiv.children[0].children[1];
@@ -107,6 +109,7 @@ function scrollListUp(event) {
     console.log(GlobalCountObject.getCount())
     formatDisplayedName(GlobalCountObject.getCount(), event);
     listDiv.style.transform = `translateY(${divListInitialOffset - GlobalCountObject.getCount() * 50}px)`;
+    updateBackground(GlobalCountObject.getCount());
 }
 
 function scrollListDown(event) {
@@ -115,6 +118,7 @@ function scrollListDown(event) {
     console.log(GlobalCountObject.getCount())
     formatDisplayedName(GlobalCountObject.getCount(), event);
     listDiv.style.transform = `translateY(${divListInitialOffset - GlobalCountObject.getCount() * 50}px)`;
+    updateBackground(GlobalCountObject.getCount());
 }
 
 function manualScroll(event) {
@@ -123,6 +127,64 @@ function manualScroll(event) {
     console.log(GlobalCountObject.getCount(), beforeCount); 
     formatScrollName(GlobalCountObject.getCount(), beforeCount);
     listDiv.style.transform = `translateY(${divListInitialOffset - GlobalCountObject.getCount() * 50}px`;
+    updateBackground(GlobalCountObject.getCount());
+}
+
+function updateBackground(count) {
+    const typeArray = pokedex[count].type;
+    const mainType = typeArray[0];
+
+    if (typeArray.length == 2 && mainType == 'Normal' && typeArray[1] == 'Flying') {
+        display.style.backgroundImage = 'url("images/flying.jpeg")';
+    }
+    else {
+        switch (mainType) {
+            case 'Grass':
+                display.style.backgroundImage = 'url("images/grass.jpeg")';
+                break;
+            case 'Water':
+                display.style.backgroundImage = 'url("images/water.jpeg")';
+                break;
+            case 'Fire':
+                display.style.backgroundImage = 'url("images/fire.jpeg")';
+                break;
+            case 'Bug':
+                display.style.backgroundImage = 'url("images/bug.jpg")';
+                break;
+            case 'Electric':
+                display.style.backgroundImage = 'url("images/electric.jpeg")';
+                break;
+            case 'Fighting':
+                display.style.backgroundImage = 'url("images/fighting.jpeg")';
+                break;
+            case 'Flying':
+                display.style.backgroundImage = 'url("images/flying.jpeg")';
+                break;
+            case 'Ghost':
+                display.style.backgroundImage = 'url("images/ghost.jpeg")';
+                break;
+            case 'Ground':
+                display.style.backgroundImage = 'url("images/ground.jpeg")';
+                break;
+            case 'Normal':
+                display.style.backgroundImage = 'url("images/normal.jpg")';
+                break;
+            case 'Poison':
+                display.style.backgroundImage = 'url("images/poison.jpeg")';
+                break;
+            case 'Psychic':
+                display.style.backgroundImage = 'url("images/psychic.jpeg")';
+                break;
+            case 'Ice':
+                display.style.backgroundImage = 'url("images/ice.jpeg")';
+                break;
+            case 'Dragon':
+                display.style.backgroundImage = 'url("images/dragon.jpeg")';
+                break;
+            default:
+                display.style.backgroundImage = 'url("images/normal.jpg")';
+        }
+    }
 }
 
 function zoomScreen() {
